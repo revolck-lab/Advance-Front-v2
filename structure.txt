@@ -1,0 +1,112 @@
+advance-maisv2/
+├── public/                               # Arquivos estáticos (imagens, favicon, etc.)
+├── src/
+│   ├── app/                              # Rotas e layouts da aplicação
+│   │   ├── layout.tsx                
+│   │   ├── page.tsx                  # Página Inicial
+│   │   ├── sobre/                    # Página Sobre
+│   │   │   └── page.tsx
+│   │   ├── cursos/                   # Página Cursos
+│   │   │   └── page.tsx
+│   │   ├── recrutamento-selecao/     # Página Recrutamento & Seleção
+│   │   │   └── page.tsx
+│   │   ├── treinamento-in-company/   # Página Treinamento In Company
+│   │   │   └── page.tsx
+│   │   ├── vagas/                    # Página Vagas
+│   │   │   └── page.tsx
+│   │   ├── blog/                     # Página Blog
+│   │   │   └── page.tsx
+│   │   ├── contato/                  # Página Contato
+│   │   │   └── page.tsx
+│   │   │   └── politica-privacidade/     # Página Política de Privacidade
+│   │   │       └── page.tsx
+│   │   ├── (dashboard)/                  # Grupo de rotas protegidas (dashboard)
+│   │   │   ├── layout.tsx                # Layout específico do dashboard
+│   │   │   ├── page.tsx                  # Página inicial do dashboard
+│   │   │   ├── middleware.ts                 # Middleware para proteção de rotas
+│   │   │   ├── professor/                # Rotas específicas para Professor (Nível 1)
+│   │   │   │   └── page.tsx
+│   │   │   ├── aluno/                    # Rotas específicas para Aluno/Candidato (Nível 2)
+│   │   │   │   └── page.tsx
+│   │   │   ├── empresa/                  # Rotas específicas para Empresa (Nível 3)
+│   │   │   │   └── page.tsx
+│   │   │   ├── administrador/            # Rotas específicas para Administrador (Nível 4)
+│   │   │   │   └── page.tsx
+│   │   │   ├── recrutador/               # Rotas específicas para Recrutador (Nível 5)
+│   │   │   │   └── page.tsx
+│   │   │   ├── pedagogico/               # Rotas específicas para Setor Pedagógico (Nível 6)
+│   │   │   │   └── page.tsx
+│   │   │   ├── rh/                       # Rotas específicas para Recursos Humanos (Nível 7)
+│   │   │   │   └── page.tsx
+│   │   │   └── super-admin/              # Rotas específicas para Super Administrador (Nível 8)
+│   │   │       └── page.tsx
+│   │   ├── layout.tsx                    # Layout global (site + dashboard)
+│   │   └── middleware.ts                 # Middleware para proteção de rotas
+│   ├── services/                         # Serviços da aplicação
+│   │   ├── api-client/                   # Serviços de chamadas à API
+│   │   │   ├── index.ts                  # Exportação centralizada dos serviços da API
+│   │   │   ├── auth.ts                   # Serviço de autenticação
+│   │   │   ├── budget.ts                 # Serviço de orçamento
+│   │   │   ├── cms/                      # Serviços relacionados ao CMS
+│   │   │   │   ├── banner.ts             # Serviço de banners
+│   │   │   │   ├── business_information.ts  # Serviço de informações de negócios
+│   │   │   │   ├── carousel.ts           # Serviço de carrossel
+│   │   │   │   ├── carousel_company.ts   # Serviço de carrossel empresarial
+│   │   │   │   ├── slider.ts             # Serviço de slider
+│   │   │   │   └── super_admin.ts        # Serviço de super admin
+│   │   │   ├── course.ts                 # Serviço de cursos
+│   │   │   ├── roles.ts                  # Serviço de papéis
+│   │   │   ├── users/                    # Serviços relacionados a usuários
+│   │   │   │   ├── index.ts              # Exportação centralizada dos serviços de usuários
+│   │   │   │   ├── address.ts            # Serviço de endereços
+│   │   │   │   └── company.ts            # Serviço de empresas
+│   │   │   └── vacancies.ts              # Serviço de vagas
+│   │   ├── auth/                         # Lógica de autenticação
+│   │   │   ├── auth.ts                   # Funções de autenticação (login, logout, etc.)
+│   │   │   └── types.ts                  # Tipos relacionados à autenticação
+│   │   ├── permissions/                  # Controle de permissões
+│   │   │   └── permissions.ts            # Funções de verificação de permissões
+│   │   └── index.ts                      # Exportação centralizada de todos os serviços
+│   ├── components/                       # Componentes reutilizáveis
+│   │   ├── site/                         # Componentes do site público
+│   │   └── dashboard/                    # Componentes do dashboard
+│   ├── hooks/                            # Hooks personalizados
+│   │   └── useAuth.ts                    # Hook para gerenciar autenticação
+│   ├── styles/                           # Estilos
+│   │   └── globals.css                   # Estilos globais
+│   └── types/                            # Tipos TypeScript compartilhados
+│       ├── budget/                       # Tipos de orçamento
+│       │   └── index.ts
+│       ├── cms/                          # Tipos relacionados ao CMS
+│       │   ├── banner/                   # Tipos de banners
+│       │   │   └── index.ts
+│       │   ├── business_information/     # Tipos de informações de negócios
+│       │   │   └── index.ts
+│       │   ├── carousel/                 # Tipos de carrossel
+│       │   │   └── index.ts
+│       │   ├── carousel_company/         # Tipos de carrossel empresarial
+│       │   │   └── index.ts
+│       │   ├── slider/                   # Tipos de slider
+│       │   │   └── index.ts
+│       │   └── super_admin/              # Tipos de super admin
+│       │       └── index.ts
+│       ├── course/                       # Tipos de cursos
+│       │   └── index.ts
+│       ├── roles/                        # Tipos de papéis
+│       │   └── index.ts
+│       ├── users/                        # Tipos relacionados a usuários
+│       │   ├── address/                  # Tipos de endereços
+│       │   │   └── index.ts
+│       │   ├── company/                  # Tipos de empresas
+│       │   │   └── index.ts
+│       │   └── index.ts                  # Exportação centralizada dos tipos de usuários
+│       ├── vacancies/                    # Tipos de vagas
+│       │   └── index.ts
+│       ├── shared/                       # Tipos compartilhados
+│       │   └── index.ts
+│       └── index.ts                      # Exportação centralizada de todos os tipos
+├── .eslintrc.json                        # Configuração do ESLint
+├── next.config.js                        # Configuração do Next.js
+├── package.json                          # Dependências e scripts do projeto
+├── tailwind.config.ts                    # Configuração do Tailwind CSS
+└── tsconfig.json                         # Configuração do TypeScript
