@@ -1,22 +1,18 @@
-import { Providers } from "@/providers";
-import { Inter } from "next/font/google";
-import "./globals.css"; // Altere para o caminho correto
+import { Providers } from '@/providers';
+import { Inter } from 'next/font/google';
+import '@/styles/globals.css'; // Altere para o caminho correto
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 export const metadata = {
-  title: "Advancemais - Sistema Integrado",
-  description: "Plataforma para gerenciamento de cursos, vagas e recrutamento",
+  title: 'Advancemais - Sistema Integrado',
+  description: 'Plataforma para gerenciamento de cursos, vagas e recrutamento',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={inter.variable}>
       <body>
