@@ -1,19 +1,26 @@
-"use client";
+import { Providers } from "@/providers";
+import { Inter } from "next/font/google";
+import "./globals.css"; // Altere para o caminho correto
 
-import { useLoading } from "@/hooks/useLoading"; // Ajuste o caminho conforme sua estrutura
-import { Loading } from "@/components/loadings/loading"; // Componente de carregamento
-import { SSRWrapper } from "@/components/SSRWrapper"; // Wrapper para SSR, se necessário
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
-export default function Layout({ children }: { children: React.ReactNode }) {
-  const loading = useLoading();
+export const metadata = {
+  title: "Advancemais - Sistema Integrado",
+  description: "Plataforma para gerenciamento de cursos, vagas e recrutamento",
+};
 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="pt">
+    <html lang="pt-BR" className={inter.variable}>
       <body>
-        <SSRWrapper>
-          {loading && <Loading />}
-          {children}
-        </SSRWrapper>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

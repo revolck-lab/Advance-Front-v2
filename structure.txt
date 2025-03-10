@@ -1,47 +1,183 @@
 advance-maisv2/
 ├── public/                               # Arquivos estáticos (imagens, favicon, etc.)
+│   ├── favicon.ico
+│   ├── logo.svg
+│   └── images/                           # Imagens do site
+│       ├── banners/
+│       └── icons/
 ├── src/
 │   ├── app/                              # Rotas e layouts da aplicação
-│   │   ├── layout.tsx                
-│   │   ├── page.tsx                  # Página Inicial
-│   │   ├── sobre/                    # Página Sobre
+│   │   ├── layout.tsx                    # Layout global
+│   │   ├── page.tsx                      # Página Inicial
+│   │   ├── sobre/                        # Página Sobre
 │   │   │   └── page.tsx
-│   │   ├── cursos/                   # Página Cursos
+│   │   ├── cursos/                       # Página Cursos
+│   │   │   ├── page.tsx
+│   │   │   └── [id]/
+│   │   │       └── page.tsx              # Detalhes do curso
+│   │   ├── recrutamento-selecao/         # Página Recrutamento & Seleção
 │   │   │   └── page.tsx
-│   │   ├── recrutamento-selecao/     # Página Recrutamento & Seleção
+│   │   ├── treinamento-in-company/       # Página Treinamento In Company
 │   │   │   └── page.tsx
-│   │   ├── treinamento-in-company/   # Página Treinamento In Company
+│   │   ├── vagas/                        # Página Vagas
+│   │   │   ├── page.tsx
+│   │   │   └── [id]/
+│   │   │       └── page.tsx              # Detalhes da vaga
+│   │   ├── blog/                         # Página Blog
+│   │   │   ├── page.tsx
+│   │   │   └── [slug]/
+│   │   │       └── page.tsx              # Post individual do blog
+│   │   ├── contato/                      # Página Contato
 │   │   │   └── page.tsx
-│   │   ├── vagas/                    # Página Vagas
+│   │   ├── politica-privacidade/         # Página Política de Privacidade
 │   │   │   └── page.tsx
-│   │   ├── blog/                     # Página Blog
-│   │   │   └── page.tsx
-│   │   ├── contato/                  # Página Contato
-│   │   │   └── page.tsx
-│   │   │   └── politica-privacidade/     # Página Política de Privacidade
-│   │   │       └── page.tsx
+│   │   ├── (auth)/                       # Grupo de rotas de autenticação
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   ├── registro/
+│   │   │   │   └── page.tsx
+│   │   │   ├── recuperar-senha/
+│   │   │   │   └── page.tsx
+│   │   │   └── redefinir-senha/
+│   │   │       └── [token]/
+│   │   │           └── page.tsx
 │   │   ├── (dashboard)/                  # Grupo de rotas protegidas (dashboard)
 │   │   │   ├── layout.tsx                # Layout específico do dashboard
 │   │   │   ├── page.tsx                  # Página inicial do dashboard
-│   │   │   ├── middleware.ts                 # Middleware para proteção de rotas
 │   │   │   ├── professor/                # Rotas específicas para Professor (Nível 1)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── cursos/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       ├── page.tsx
+│   │   │   │   │       └── alunos/
+│   │   │   │   │           └── page.tsx
+│   │   │   │   └── perfil/
+│   │   │   │       └── page.tsx
 │   │   │   ├── aluno/                    # Rotas específicas para Aluno/Candidato (Nível 2)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── cursos/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   ├── candidaturas/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── perfil/
+│   │   │   │       └── page.tsx
 │   │   │   ├── empresa/                  # Rotas específicas para Empresa (Nível 3)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── vagas/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   ├── criar/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       ├── page.tsx
+│   │   │   │   │       └── candidatos/
+│   │   │   │   │           └── page.tsx
+│   │   │   │   ├── assinatura/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── perfil/
+│   │   │   │       └── page.tsx
 │   │   │   ├── administrador/            # Rotas específicas para Administrador (Nível 4)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── usuarios/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   ├── cms/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   ├── banners/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── sliders/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── business-info/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   └── relatorios/
+│   │   │   │       └── page.tsx
 │   │   │   ├── recrutador/               # Rotas específicas para Recrutador (Nível 5)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── candidatos/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   └── entrevistas/
+│   │   │   │       └── page.tsx
 │   │   │   ├── pedagogico/               # Rotas específicas para Setor Pedagógico (Nível 6)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── cursos/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   └── [id]/
+│   │   │   │   │       └── page.tsx
+│   │   │   │   └── professores/
+│   │   │   │       └── page.tsx
 │   │   │   ├── rh/                       # Rotas específicas para Recursos Humanos (Nível 7)
-│   │   │   │   └── page.tsx
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── vagas/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── empresas/
+│   │   │   │       └── page.tsx
 │   │   │   └── super-admin/              # Rotas específicas para Super Administrador (Nível 8)
-│   │   │       └── page.tsx
-│   │   ├── layout.tsx                    # Layout global (site + dashboard)
+│   │   │       ├── page.tsx
+│   │   │       ├── config/
+│   │   │       │   ├── page.tsx
+│   │   │       │   ├── smtp/
+│   │   │       │   │   └── page.tsx
+│   │   │       │   └── site-info/
+│   │   │       │       └── page.tsx
+│   │   │       └── administradores/
+│   │   │           └── page.tsx
 │   │   └── middleware.ts                 # Middleware para proteção de rotas
+│   ├── components/                       # Componentes reutilizáveis
+│   │   ├── site/                         # Componentes do site público
+│   │   │   ├── layout/
+│   │   │   │   ├── Header.tsx
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   └── Navigation.tsx
+│   │   │   ├── home/
+│   │   │   │   ├── BannerSection.tsx
+│   │   │   │   ├── CoursesHighlight.tsx
+│   │   │   │   └── TestimonialsSection.tsx
+│   │   │   ├── courses/
+│   │   │   │   ├── CourseCard.tsx
+│   │   │   │   └── CoursesList.tsx
+│   │   │   ├── vacancies/
+│   │   │   │   ├── VacancyCard.tsx
+│   │   │   │   └── VacanciesList.tsx
+│   │   │   └── forms/
+│   │   │       ├── ContactForm.tsx
+│   │   │       └── BudgetRequestForm.tsx
+│   │   ├── dashboard/                    # Componentes do dashboard
+│   │   │   ├── layout/
+│   │   │   │   ├── Sidebar.tsx
+│   │   │   │   ├── TopBar.tsx
+│   │   │   │   └── DashboardShell.tsx
+│   │   │   ├── data-display/
+│   │   │   │   ├── DataTable.tsx
+│   │   │   │   ├── StatsCard.tsx
+│   │   │   │   └── ChartCard.tsx
+│   │   │   ├── forms/
+│   │   │   │   ├── CourseForm.tsx
+│   │   │   │   ├── VacancyForm.tsx
+│   │   │   │   └── UserForm.tsx
+│   │   │   └── modals/
+│   │   │       ├── ConfirmationModal.tsx
+│   │   │       └── FormModal.tsx
+│   │   └── ui/                           # Componentes de UI reutilizáveis
+│   │       ├── button.tsx
+│   │       ├── input.tsx
+│   │       ├── select.tsx
+│   │       ├── checkbox.tsx
+│   │       ├── radio.tsx
+│   │       ├── textarea.tsx
+│   │       ├── alert.tsx
+│   │       ├── badge.tsx
+│   │       ├── card.tsx
+│   │       ├── dialog.tsx
+│   │       ├── dropdown.tsx
+│   │       ├── table.tsx
+│   │       ├── tabs.tsx
+│   │       ├── toast.tsx
+│   │       └── tooltip.tsx
 │   ├── services/                         # Serviços da aplicação
 │   │   ├── api-client/                   # Serviços de chamadas à API
 │   │   │   ├── index.ts                  # Exportação centralizada dos serviços da API
@@ -67,46 +203,90 @@ advance-maisv2/
 │   │   ├── permissions/                  # Controle de permissões
 │   │   │   └── permissions.ts            # Funções de verificação de permissões
 │   │   └── index.ts                      # Exportação centralizada de todos os serviços
-│   ├── components/                       # Componentes reutilizáveis
-│   │   ├── site/                         # Componentes do site público
-│   │   └── dashboard/                    # Componentes do dashboard
 │   ├── hooks/                            # Hooks personalizados
-│   │   └── useAuth.ts                    # Hook para gerenciar autenticação
+│   │   ├── useAuth.ts                    # Hook para gerenciar autenticação
+│   │   ├── usePagination.ts              # Hook para gerenciar paginação
+│   │   ├── useForm.ts                    # Hook para gerenciar formulários
+│   │   ├── useToast.ts                   # Hook para gerenciar notificações
+│   │   ├── useUser.ts                    # Hook para gerenciar usuário logado
+│   │   ├── usePermissions.ts             # Hook para verificar permissões
+│   │   └── api/                          # Hooks específicos para chamadas API
+│   │       ├── useCourses.ts             # Hook para gerenciar cursos
+│   │       ├── useVacancies.ts           # Hook para gerenciar vagas
+│   │       └── useBudget.ts              # Hook para gerenciar orçamentos
+│   ├── store/                            # Gerenciamento de estado global
+│   │   ├── auth-store.ts                 # Estado relacionado à autenticação
+│   │   ├── user-store.ts                 # Estado relacionado ao usuário
+│   │   ├── ui-store.ts                   # Estado relacionado à UI (temas, sidebar, etc)
+│   │   ├── course-store.ts               # Estado relacionado a cursos
+│   │   ├── vacancy-store.ts              # Estado relacionado a vagas
+│   │   └── index.ts                      # Exportação centralizada do estado
+│   ├── utils/                            # Utilitários
+│   │   ├── date-formatter.ts             # Formatação de datas
+│   │   ├── currency-formatter.ts         # Formatação de moeda
+│   │   ├── validation.ts                 # Funções de validação
+│   │   ├── storage.ts                    # Funções para localStorage/sessionStorage
+│   │   ├── form-helpers.ts               # Helpers para formulários
+│   │   ├── api-helpers.ts                # Helpers para API
+│   │   └── index.ts                      # Exportação centralizada de utilitários
+│   ├── lib/                              # Bibliotecas e configurações
+│   │   ├── axios-config.ts               # Configuração do Axios
+│   │   ├── react-query.ts                # Configuração do React Query
+│   │   ├── font-loader.ts                # Configuração de fontes
+│   │   └── index.ts                      # Exportação centralizada de libs
+│   ├── constants/                        # Constantes da aplicação
+│   │   ├── routes.ts                     # Rotas da aplicação
+│   │   ├── api-endpoints.ts              # Endpoints da API
+│   │   ├── error-messages.ts             # Mensagens de erro
+│   │   ├── permissions.ts                # Constantes de permissões
+│   │   ├── form-validations.ts           # Regras de validação de formulários
+│   │   └── index.ts                      # Exportação centralizada de constantes
 │   ├── styles/                           # Estilos
-│   │   └── globals.css                   # Estilos globais
+│   │   ├── globals.css                   # Estilos globais
+│   │   ├── animations.css                # Animações CSS
+│   │   └── themes/                       # Temas da aplicação
+│   │       ├── light.css
+│   │       └── dark.css
 │   └── types/                            # Tipos TypeScript compartilhados
 │       ├── budget/                       # Tipos de orçamento
 │       │   └── index.ts
 │       ├── cms/                          # Tipos relacionados ao CMS
-│       │   ├── banner/                   # Tipos de banners
+│       │   ├── banner/                   
 │       │   │   └── index.ts
-│       │   ├── business_information/     # Tipos de informações de negócios
+│       │   ├── business_information/     
 │       │   │   └── index.ts
-│       │   ├── carousel/                 # Tipos de carrossel
+│       │   ├── carousel/                 
 │       │   │   └── index.ts
-│       │   ├── carousel_company/         # Tipos de carrossel empresarial
+│       │   ├── carousel_company/         
 │       │   │   └── index.ts
-│       │   ├── slider/                   # Tipos de slider
+│       │   ├── slider/                   
 │       │   │   └── index.ts
-│       │   └── super_admin/              # Tipos de super admin
+│       │   └── super_admin/              
 │       │       └── index.ts
 │       ├── course/                       # Tipos de cursos
 │       │   └── index.ts
 │       ├── roles/                        # Tipos de papéis
 │       │   └── index.ts
 │       ├── users/                        # Tipos relacionados a usuários
-│       │   ├── address/                  # Tipos de endereços
+│       │   ├── address/                  
 │       │   │   └── index.ts
-│       │   ├── company/                  # Tipos de empresas
+│       │   ├── company/                  
 │       │   │   └── index.ts
-│       │   └── index.ts                  # Exportação centralizada dos tipos de usuários
+│       │   └── index.ts                  
 │       ├── vacancies/                    # Tipos de vagas
 │       │   └── index.ts
 │       ├── shared/                       # Tipos compartilhados
+│       │   ├── api-responses.ts          # Tipos para respostas da API
+│       │   ├── pagination.ts             # Tipos para paginação
+│       │   └── index.ts
+│       ├── auth/                         # Tipos de autenticação
 │       │   └── index.ts
 │       └── index.ts                      # Exportação centralizada de todos os tipos
 ├── .eslintrc.json                        # Configuração do ESLint
-├── next.config.js                        # Configuração do Next.js
-├── package.json                          # Dependências e scripts do projeto
-├── tailwind.config.ts                    # Configuração do Tailwind CSS
-└── tsconfig.json                         # Configuração do TypeScript
+├── .prettierrc.js                        # Configuração do Prettier
+├── next.config.mjs                       # Configuração do Next.js
+├── postcss.config.mjs                    # Configuração do PostCSS
+├── tailwind.config.ts                    # Configuração do Tailwind
+├── tsconfig.json                         # Configuração do TypeScript
+├── package.json                          # Dependências e scripts
+└── README.md                             # Documentação do projeto
