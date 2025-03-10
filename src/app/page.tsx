@@ -1,6 +1,6 @@
-import { Code } from "@heroui/react";
+import { Code } from '@heroui/react';
 
-export default function Page() {
+export default function PaginaInicial() {
   return (
     <div className="flex flex-wrap gap-4">
       <Code color="default">npm install @heroui/react</Code>

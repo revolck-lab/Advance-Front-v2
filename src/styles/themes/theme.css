@@ -1,0 +1,183 @@
+/* 
+  Advancemais Theme CSS
+  Primary colors: #00257d (primary blue), #001a57 (deep blue), #ff202a (accent red)
+  Font: SF Pro Display-inspired rounded font
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Base colors */
+  --background: 222 33% 99%;
+  --foreground: 222 47% 11%;
+
+  /* Card colors */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+
+  /* Popover colors */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
+
+  /* Primary colors - Blue */
+  --primary: 224 100% 25%; /* #00257d */
+  --primary-foreground: 210 40% 98%;
+
+  /* Secondary colors - Deeper Blue */
+  --secondary: 226 100% 22%; /* #001a57 */
+  --secondary-foreground: 210 40% 98%;
+
+  /* Muted colors */
+  --muted: 224 30% 94%;
+  --muted-foreground: 224 20% 40%;
+
+  /* Accent colors - Red */
+  --accent: 357 100% 56%; /* #ff202a */
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive colors (reusing the accent red) */
+  --destructive: 357 100% 56%;
+  --destructive-foreground: 0 0% 100%;
+
+  /* Border, input, and ring colors */
+  --border: 224 20% 88%;
+  --input: 224 20% 88%;
+  --ring: 224 100% 25%;
+
+  /* Border radius */
+  --radius: 0.75rem;
+
+  /* Sidebar colors */
+  --sidebar-background: 0 0% 100%;
+  --sidebar-foreground: 224 20% 20%;
+  --sidebar-primary: 224 100% 25%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 224 30% 95%;
+  --sidebar-accent-foreground: 224 100% 25%;
+  --sidebar-border: 224 20% 90%;
+  --sidebar-ring: 224 100% 25%;
+
+  /* Animation durations */
+  --transition-fast: 150ms;
+  --transition-medium: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* Apply Plus Jakarta Sans as the main font */
+body {
+  font-family:
+    'Plus Jakarta Sans',
+    -apple-system,
+    BlinkMacSystemFont,
+    system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Button styling with rounded corners and subtle shadow */
+.btn,
+button[class*='btn'],
+[type='button'],
+[type='submit'] {
+  border-radius: var(--radius);
+  transition: all var(--transition-fast) ease;
+  font-weight: 500;
+}
+
+/* Input styling with rounded corners */
+input,
+select,
+textarea {
+  border-radius: var(--radius);
+  transition: all var(--transition-fast) ease;
+}
+
+/* Card styling with subtle shadow and rounded corners */
+.card,
+[class*='card'] {
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0, 37, 125, 0.05);
+  transition: all var(--transition-medium) ease;
+}
+
+.card:hover,
+[class*='card']:hover {
+  box-shadow: 0 6px 16px rgba(0, 37, 125, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Headings with the brand blue color */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(var(--primary));
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* Accent text - using the red accent color */
+.text-accent,
+.accent {
+  color: hsl(var(--accent)) !important;
+}
+
+/* Primary buttons with blue background */
+.btn-primary,
+.button-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Secondary buttons with deeper blue background */
+.btn-secondary,
+.button-secondary {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+}
+
+/* Accent buttons with red background */
+.btn-accent,
+.button-accent {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn var(--transition-medium) ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp var(--transition-medium) ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
