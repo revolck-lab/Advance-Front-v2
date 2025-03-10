@@ -1,6 +1,10 @@
 import { RoleLevel } from "@/types/roles";
 import { PERMISSIONS } from "@/constants/permissions";
 
+// Definição de tipos para facilitar o uso do TypeScript
+type PermissionAction = RoleLevel[];
+type ResourcePermissions = Record<string, PermissionAction>;
+
 /**
  * Serviço para verificação de permissões baseado em roles
  * Implementa lógica de verificação isolada do resto da aplicação
@@ -19,14 +23,13 @@ export const permissionsService = {
     }
 
     // Verifica se recurso existe nas permissões
-    const resourcePermissions = PERMISSIONS[resource];
+    const resourcePermissions = PERMISSIONS[resource] as ResourcePermissions;
     if (!resourcePermissions) {
       return false;
     }
 
     // Verifica se ação existe para o recurso
-    const actionPermissions =
-      resourcePermissions[action as keyof typeof resourcePermissions];
+    const actionPermissions = resourcePermissions[action];
     if (!actionPermissions) {
       return false;
     }
@@ -78,11 +81,13 @@ export const permissionsService = {
       const accessibleActions: string[] = [];
 
       // Verifica cada ação no recurso
-      Object.entries(actions).forEach(([action, allowedRoles]) => {
-        if (allowedRoles.includes(roleLevel)) {
-          accessibleActions.push(action);
-        }
-      });
+      Object.entries(actions as ResourcePermissions).forEach(
+        ([action, allowedRoles]) => {
+          if (allowedRoles.includes(roleLevel)) {
+            accessibleActions.push(action);
+          }
+        },
+      );
 
       // Adiciona ao resultado se houver ações permitidas
       if (accessibleActions.length > 0) {

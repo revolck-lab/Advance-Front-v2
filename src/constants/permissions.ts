@@ -78,6 +78,16 @@ export const PERMISSIONS = {
   },
 
   /**
+   * Permissões para gerenciamento de orçamentos
+   */
+  BUDGETS: {
+    VIEW_ALL: [RoleLevel.ADMIN, RoleLevel.HR, RoleLevel.SUPER_ADMIN],
+    CREATE: [RoleLevel.COMPANY, RoleLevel.ADMIN, RoleLevel.SUPER_ADMIN],
+    UPDATE: [RoleLevel.ADMIN, RoleLevel.SUPER_ADMIN],
+    DELETE: [RoleLevel.ADMIN, RoleLevel.SUPER_ADMIN],
+  },
+
+  /**
    * Permissões para gerenciamento de CMS
    */
   CMS: {

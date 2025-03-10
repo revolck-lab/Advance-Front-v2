@@ -11,7 +11,7 @@ const defaultQueryOptions: DefaultOptions = {
     refetchOnReconnect: true, // Recarrega dados ao reconectar
     retry: 1, // Número de tentativas em caso de erro
     staleTime: 5 * 60 * 1000, // Dados considerados "frescos" por 5 minutos
-    cacheTime: 10 * 60 * 1000, // Cache mantido por 10 minutos
+    gcTime: 10 * 60 * 1000, // Limpa cache a cada 10 minutos
   },
   mutations: {
     retry: 0, // Não retenta mutações automaticamente

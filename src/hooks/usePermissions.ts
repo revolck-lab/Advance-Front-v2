@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useAuthStore } from "@/store/auth-store";
 import { permissionsService } from "@/services/permissions/permissions";
 import { RoleLevel } from "@/types/roles";
-import { ROLE_NAMES } from "@/constants/permissions";
+import { PERMISSIONS, ROLE_NAMES } from "@/constants/permissions";
 
 /**
  * Hook personalizado para verificação de permissões na UI
@@ -20,7 +20,7 @@ export function usePermissions() {
 
   // Verificação de permissão para uma ação em um recurso
   const hasPermission = (
-    resource: keyof typeof permissionsService.accessibleResources,
+    resource: keyof typeof PERMISSIONS,
     action: string,
   ): boolean => {
     if (!userRoleLevel) return false;

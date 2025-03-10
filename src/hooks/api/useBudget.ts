@@ -2,14 +2,13 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { budgetService } from "@/services/api-client/budget";
 import { CreateBudgetDTO } from "@/types/budget";
 import { usePermissions } from "@/hooks/usePermissions";
-import { RoleLevel } from "@/types/roles";
 
 /**
  * Hook para gerenciar operações relacionadas a orçamentos
  */
 export function useBudget() {
   const queryClient = useQueryClient();
-  const { userRoleLevel, hasPermission } = usePermissions();
+  const { hasPermission } = usePermissions();
 
   // Query keys para React Query
   const QUERY_KEYS = {
