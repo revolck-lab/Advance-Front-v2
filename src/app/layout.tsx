@@ -1,5 +1,6 @@
 import { Providers } from '@/providers';
-import TopHeader from '@/layout/site/TopHeader';
+import TopHeader from '@/components/site/layout/TopHeader';
+import Header from '@/components/site/layout/Header';
 import '@/styles/globals.css';
 
 export const metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen bg-background antialiased">
         <Providers>
           <TopHeader />
+          <Header />
           {children}
         </Providers>
       </body>
